@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="GUI.Controll.MonAn"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.Controll"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="7" Background="#FF05BCF0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="320"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GridSplitter Width="5" Grid.Row="1" Background="Transparent"/>
+        <!--Dữ liệu hiển thị-->
+        <TextBlock FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">DANH SÁCH MÓN ĂN</TextBlock>
+        <DataGrid x:Name="Monan" Grid.Row="1" Margin="3" 
+                  CanUserAddRows="False" IsReadOnly="True"
+                  VerticalGridLinesBrush="Transparent"
+                  HorizontalGridLinesBrush="Transparent"
+                  AutoGenerateColumns="False" FontSize="19" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" Background="#FFE2E2E2" SelectionChanged="Monan_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TÊN MÓN ĂN" Foreground="#FF00A2FF" Binding="{Binding tenmon}" Width="30*" FontSize="14" FontWeight="Bold"/>
+                <DataGridTextColumn Header="LOẠI" Foreground="#FF232323" Binding="{Binding tenloai}" Width="30*" FontSize="14" />
+                <DataGridTextColumn Header="GIÁ BÁN" Foreground="#FF8B1105" Binding="{Binding gia}" Width="30*" FrameworkElement.FlowDirection="RightToLeft" FontSize="14"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="#FFBDECF9"/>
+            </DataGrid.Resources>
+
+        </DataGrid>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="3" Background="White" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <!--Đây là noi hiên thị thông tin mon ăn-->
+                <Grid Height="230" Width="250" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="TÊN MÓN" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FF05A7E4"/>
+                    <TextBlock Text="GIÁ" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FF05A7E4"/>
+                    <TextBlock Text="LOẠI" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FF05A7E4"/>
+                    <TextBox x:Name="tenmon" Padding="2" Grid.Column="1" Grid.Row="0" Margin="0 10 " FontSize="20" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="gia" Padding="2" Grid.Column="1" Grid.Row="1" Margin="0 10 " FontSize="20" VerticalContentAlignment="Center" Foreground="#FFE40000" FontWeight="Bold"/>
+                    <ComboBox x:Name="loaimon" Padding="2" Grid.Column="1" Grid.Row="2" Margin="0 10 " FontSize="20" VerticalContentAlignment="Center">
+
+                    </ComboBox>
+                    <Button Tag="Cấu Hình Loại" Style="{DynamicResource ButtonStyle1}" 
+                            Grid.Column="1" Grid.Row="3" Width="150" 
+                            Height="36" HorizontalAlignment="Right" Background="#FF05BCF0" VerticalAlignment="Top" Click="Button_Click">
+                        <Image Source="/GUI;component/icon/plus.png"></Image>  
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Tag="XÓA" Grid.Column="0" Style="{DynamicResource ButtonStyle1}" BorderBrush="#FF00B9FF" Background="#FFBF1A09" Click="Button_Click_4">
+                    <Image Source="/GUI;component/icon/trash.png"/>
+                </Button>
+                <Button Tag="SỬA" Grid.Column="1" Style="{DynamicResource ButtonStyle1}" Background="#FF00B9FF" Click="Button_Click_3">
+                    <Image Source="/GUI;component/icon/fix.png"/>
+                </Button>
+                <Button Tag="THÊM" Grid.Column="2" Style="{DynamicResource ButtonStyle1}" Background="#FF00B9FF" Click="Button_Click_1">
+                    <Image Source="/GUI;component/icon/plus.png"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

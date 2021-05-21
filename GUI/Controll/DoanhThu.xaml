@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="GUI.Controll.DoanhThu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.Controll"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="7" Background="#FF05BCF0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="320"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GridSplitter Width="5" Grid.Row="1" Background="Transparent"/>
+        <!--Dữ liệu hiển thị-->
+        <TextBlock FontSize="24" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="White">DOANH THU</TextBlock>
+        <DataGrid x:Name="Bill" Grid.Row="1" Margin="3" 
+                  CanUserAddRows="False"
+                  VerticalGridLinesBrush="Transparent"
+                  HorizontalGridLinesBrush="Transparent"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False" FontSize="19" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" Background="#FFE2E2E2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Bàn" Width="1*" Binding="{Binding idban}" FontSize="14" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Thời gian" Width="2*" Binding="{Binding thoigian}"/>
+                <DataGridTextColumn Header="Tiền" Width="1*" Binding="{Binding thanhtien}" Foreground="#FFB00000"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="#FFBDECF9"/>
+            </DataGrid.Resources>
+
+        </DataGrid>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="3" Background="White" >
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+               
+                <DockPanel >
+                    <TextBlock DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">DOANH THU NGÀY</TextBlock>
+                    <TextBox DockPanel.Dock="Top" Height="50" x:Name="txtdoanhthungay" IsReadOnly="True" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" FontWeight="Bold" Background="#FFF3F3F3" Foreground="#FFA60000"></TextBox>
+                    <DatePicker x:Name="day" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="}" SelectedDateChanged="day_SelectedDateChanged" FontSize="25"/>
+                </DockPanel>
+                <!--<DockPanel Grid.Row="1">
+                    <TextBlock DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">DOANH THU THÁNG</TextBlock>
+                    <TextBox  x:Name="txtdoanhthuthang" DockPanel.Dock="top" IsReadOnly="True" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" FontWeight="Bold" Background="#FFF3F3F3" Foreground="#FFA60000">100000</TextBox>
+                    <Grid DockPanel.Dock="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Height="40" Style="{DynamicResource ButtonStyle1}" Tag="ᐊ"  Background="#FF05BCF0"/>
+                        <Button Height="40" Grid.Column="1" Style="{DynamicResource ButtonStyle1}" Tag="ᐅ" Background="#FF05BCF0"/>
+                    </Grid>
+                </DockPanel>
+                -->
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

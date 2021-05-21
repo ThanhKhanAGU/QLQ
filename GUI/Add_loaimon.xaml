@@ -1,0 +1,18 @@
+﻿<Window x:Class="GUI.Add_loaimon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="THÊM LOẠI MÓN PHỤC VỤ" Height="200" Width="420" ResizeMode="NoResize">
+
+    <Grid>
+        <ComboBox x:Name="txtLoai" IsEditable="True" HorizontalAlignment="Left" Height="39" Margin="124,58,0,0" VerticalAlignment="Top" Width="257" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Margin="28,65,258,78" TextWrapping="Wrap" Text="TÊN LOẠI" VerticalAlignment="Center" Height="29" Width="128" FontSize="18" FontWeight="Bold" Foreground="#FF05BCF0" RenderTransformOrigin="0.474,-0.297"/>
+        <TextBlock HorizontalAlignment="Center" Margin="18,11,28,125" TextWrapping="Wrap" Text="THÊM LOẠI MÓN PHỤC VỤ" VerticalAlignment="Center" Height="36" Width="368" FontSize="24" FontWeight="Bold" Foreground="#FF05BCF0" TextAlignment="Center"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Tag="THÊM" HorizontalAlignment="Left" Margin="250,109,0,0" VerticalAlignment="Top" Width="121" Height="45" Background="#FF05BCF0" Click="Button_Click"/>
+        <Button Style="{DynamicResource ResourceKey=ButtonStyle1}" Tag="XÓA" HorizontalAlignment="Left" Margin="130,109,0,0" VerticalAlignment="Top" Width="121" Height="45" Background="#FFE81E0A" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
