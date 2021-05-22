@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="150"/>
             </Grid.ColumnDefinitions>
             <DataGrid x:Name="txtmon" Margin="5 0 0 5" FontWeight="Bold" FontSize="14"
-                      AutoGenerateColumns="False">
+                      AutoGenerateColumns="False" SelectionChanged="txtmon_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="1*" Header="Tên Món" Binding="{Binding tenmon}" FontWeight="Bold"/>
                     <DataGridTextColumn Width="1*" Header="Giá" Binding="{Binding gia}" Foreground="#FFC50000" />

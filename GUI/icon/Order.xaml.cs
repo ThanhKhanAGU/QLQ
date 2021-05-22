@@ -46,13 +46,17 @@ namespace GUI.icon
             int a = Int32.Parse(txtsoluong.Text)-1;
             if (a < 0) a = 0;
             txtsoluong.Text = a + "";
-
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             int a = Int32.Parse(txtsoluong.Text) + 1;
             txtsoluong.Text = a + "";
+        }
+
+        private void txtmon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
