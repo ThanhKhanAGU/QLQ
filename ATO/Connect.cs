@@ -10,7 +10,7 @@ namespace ATO
 {
     public class Connect
     {
-        public static SqlConnection connection = new SqlConnection(@"Data Source="+(System.IO.File.ReadAllText(@"conectionstring.txt") +@"; Initial Catalog=Duyquangcoffee;Integrated Security=True"));
+        public static SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS; Initial Catalog=Duyquangcoffee;Integrated Security=True");
         
         static void Main(string[] args)
         {
