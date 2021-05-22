@@ -34,10 +34,14 @@ namespace GUI.icon
             if(vi != null)
             {
                 string query = @"insert OrderPart(id,idmon,soluong,idban,ghichu) values(getdate()," + vi[0].ToString() + "," + txtsoluong.Text + "," + idbanduocchon + ",N'" + txtghichu.Text + "')";
-                if (!ATO.Connect.post(query)==true)
+                if (!ATO.Connect.post(query) == true)
                     MessageBox.Show("Thêm không thành công mời chọn món");
-                else dsmon.ItemsSource = ATO.Connect.get(@"exec DSorder " + idbanduocchon).DefaultView;
-                txtsoluong.Text = "1";
+                else
+                {
+                    dsmon.ItemsSource = ATO.Connect.get(@"exec DSorder " + idbanduocchon).DefaultView;
+                    txtsoluong.Text = "1";
+                    MessageBox.Show("Thêm ko Thành Cong");
+                }
             } 
         }
 
