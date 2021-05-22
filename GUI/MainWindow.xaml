@@ -47,7 +47,7 @@
             </StackPanel>
             <Border Grid.Row="2" BorderBrush="#FF59CAFF" BorderThickness="2" CornerRadius="3">
                 <!--Than hien thi thong tin-->
-                <Grid x:Name="body">
+                <Grid x:Name="body" Background="White">
 
                 </Grid>
             </Border>
