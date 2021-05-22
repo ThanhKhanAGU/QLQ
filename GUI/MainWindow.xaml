@@ -16,7 +16,7 @@
                 <RowDefinition Height="15"/>
             </Grid.RowDefinitions>
             <!-- tao thanh dieu khien-->
-            <DockPanel Grid.Row="0" Background="#FFF0F0F0" MouseLeftButtonDown="DockPanel_MouseLeftButtonDown" Margin="2">
+            <DockPanel Grid.Row="0" Background="#0C59CAFF" MouseLeftButtonDown="DockPanel_MouseLeftButtonDown" Margin="2">
                 <Button Margin="0 0 10 0" DockPanel.Dock="Right" Width="35" Style="{DynamicResource buttontoolbar}" Click="Close">
                     <Image Source="icon/close.png" />
                 </Button>
